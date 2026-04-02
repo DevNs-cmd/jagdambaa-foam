@@ -1,643 +1,777 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jagdambaa Foam | The Pinnacle of Comfort</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<style>
-/* Base iOS Theme Reset */
-:root {
-  --bg-color: #000000;
-  --text-primary: #F5F5F7;
-  --text-secondary: #86868B;
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --card-border: rgba(255, 255, 255, 0.08); /* slightly higher visibility without blur lag */
-  --accent: #ffffff;
-  --apple-blue: #2997ff;
-}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jagdambaa Foam | The Pinnacle of Comfort</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base iOS Theme Reset */
+        :root {
+            --bg-color: #000000;
+            --text-primary: #F5F5F7;
+            --text-secondary: #86868B;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            /* slightly higher visibility without blur lag */
+            --accent: #ffffff;
+            --apple-blue: #2997ff;
+        }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  -webkit-font-smoothing: antialiased;
-}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
 
-body {
-  background-color: var(--bg-color);
-  color: var(--text-primary);
-  overflow-x: hidden;
-  line-height: 1.4;
-}
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            overflow-x: hidden;
+            line-height: 1.4;
+        }
 
-/* Fluid Typography */
-h1 { font-size: clamp(3rem, 8vw, 6.5rem); font-weight: 700; letter-spacing: -0.05em; line-height: 1.05; }
-h2 { font-size: clamp(2rem, 5vw, 4rem); font-weight: 600; letter-spacing: -0.04em; margin-bottom: 1.2rem; }
-h3 { font-size: clamp(1.2rem, 2vw, 1.7rem); font-weight: 500; margin-bottom: 0.5rem; letter-spacing: -0.01em; color: var(--text-primary); }
-p { font-size: clamp(1rem, 2vw, 1.25rem); font-weight: 400; color: var(--text-secondary); max-width: 650px; }
+        /* Fluid Typography */
+        h1 {
+            font-size: clamp(3rem, 8vw, 6.5rem);
+            font-weight: 700;
+            letter-spacing: -0.05em;
+            line-height: 1.05;
+        }
 
-/* Gradient Text for Premium Feel */
-.text-gradient {
-  background: linear-gradient(135deg, #ffffff 0%, #a1a1a6 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-.text-gradient-subtle {
-  background: linear-gradient(90deg, #d2d2d7 0%, #86868b 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
+        h2 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            font-weight: 600;
+            letter-spacing: -0.04em;
+            margin-bottom: 1.2rem;
+        }
 
-/* Navbar - Apple Style Glassmorphism */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  padding: 18px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(12px); /* REDUCED FOR PERFORMANCE */
-  -webkit-backdrop-filter: blur(12px);
-  z-index: 1000;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  will-change: transform; /* Hardware Acceleration */
-}
+        h3 {
+            font-size: clamp(1.2rem, 2vw, 1.7rem);
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.01em;
+            color: var(--text-primary);
+        }
 
-.logo {
-  font-size: 1.3rem;
-  font-weight: 600;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-  text-decoration: none;
-}
+        p {
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 400;
+            color: var(--text-secondary);
+            max-width: 650px;
+        }
 
-.btn {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background: var(--text-primary);
-  color: #000;
-  padding: 10px 24px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 0.95rem;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
-}
+        /* Gradient Text for Premium Feel */
+        .text-gradient {
+            background: linear-gradient(135deg, #ffffff 0%, #a1a1a6 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.btn:hover {
-  transform: scale(1.04);
-  background: #e0e0e0;
-}
+        .text-gradient-subtle {
+            background: linear-gradient(90deg, #d2d2d7 0%, #86868b 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
 
-.btn-secondary {
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 16px 32px;
-  border-radius: 999px;
-  text-decoration: none;
-  font-weight: 500;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(8px);
-  will-change: transform;
-}
+        /* Navbar - Apple Style Glassmorphism */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(12px);
+            /* REDUCED FOR PERFORMANCE */
+            -webkit-backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            will-change: transform;
+            /* Hardware Acceleration */
+        }
 
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: rgba(255, 255, 255, 0.4);
-}
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            color: var(--text-primary);
+            text-decoration: none;
+        }
 
-/* Fluid Hero Section */
-.hero {
-  position: relative;
-  height: 100vh;
-  min-height: 700px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 5%;
-  overflow: hidden;
-  transform: translateZ(0); /* Hardware Acceleration */
-}
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: var(--text-primary);
+            color: #000;
+            padding: 10px 24px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: transform;
+        }
 
-.hero video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-  will-change: transform;
-}
+        .btn:hover {
+            transform: scale(1.04);
+            background: #e0e0e0;
+        }
 
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.85) 100%);
-  z-index: -1;
-}
+        .btn-secondary {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 16px 32px;
+            border-radius: 999px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(8px);
+            will-change: transform;
+        }
 
-.hero p {
-  color: #A1A1A6;
-  margin-top: 1.5rem;
-  font-weight: 400;
-  margin-bottom: 3rem;
-  margin-left: auto;
-  margin-right: auto;
-}
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
 
-.hero .cta-group {
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
+        /* Fluid Hero Section */
+        .hero {
+            position: relative;
+            height: 100vh;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 5%;
+            overflow: hidden;
+            transform: translateZ(0);
+            /* Hardware Acceleration */
+        }
 
-/* Sections */
-.section {
-  padding: clamp(80px, 12vw, 160px) 5%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -2;
+            will-change: transform;
+        }
 
-.section-header {
-  text-align: center;
-  margin-bottom: clamp(3rem, 6vw, 6rem);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%);
+            z-index: -1;
+        }
 
-/* Apple Bento Box Grid */
-.bento-grid {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  gap: 24px;
-}
+        .hero p {
+            color: #A1A1A6;
+            margin-top: 1.5rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
 
-.bento-item {
-  background: var(--card-bg);
-  border: 1px solid var(--card-border);
-  border-radius: 32px;
-  padding: clamp(30px, 4vw, 48px);
-  backdrop-filter: blur(10px); /* REDUCED LAG */
-  -webkit-backdrop-filter: blur(10px);
-  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
-  overflow: hidden;
-  will-change: transform;
-}
+        .hero .cta-group {
+            display: flex;
+            gap: 16px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
 
-.bento-item:hover {
-  transform: translateY(-8px) scale(1.01);
-  border-color: rgba(255, 255, 255, 0.15);
-}
+        /* Sections */
+        .section {
+            padding: clamp(80px, 12vw, 160px) 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-.bento-icon {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-  color: var(--text-primary);
-}
+        .section-header {
+            text-align: center;
+            margin-bottom: clamp(3rem, 6vw, 6rem);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
-/* Spans for Bento */
-.span-6 { grid-column: span 6; }
-.span-4 { grid-column: span 4; }
-.span-8 { grid-column: span 8; }
-.span-12 { grid-column: span 12; }
+        /* Apple Bento Box Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 24px;
+        }
 
-@media(max-width: 1024px) {
-  .span-4 { grid-column: span 6; }
-  .span-8 { grid-column: span 12; }
-}
-@media(max-width: 768px) {
-  .span-4, .span-6, .span-8, .span-12 { grid-column: span 12; }
-}
+        .bento-item {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 32px;
+            padding: clamp(30px, 4vw, 48px);
+            backdrop-filter: blur(10px);
+            /* REDUCED LAG */
+            -webkit-backdrop-filter: blur(10px);
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+            will-change: transform;
+        }
 
-/* Sub-Video Section (Eye Catchy!) */
-.video-showcase {
-  width: 100%;
-  border-radius: 32px;
-  overflow: hidden;
-  position: relative;
-  border: 1px solid var(--card-border);
-  aspect-ratio: 16/9;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-  transform: translateZ(0);
-}
+        .bento-item:hover {
+            transform: translateY(-8px) scale(1.01);
+            border-color: rgba(255, 255, 255, 0.15);
+        }
 
-.video-showcase video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-  transition: opacity 0.5s ease;
-  will-change: opacity;
-}
+        .bento-icon {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--text-primary);
+        }
 
-.video-showcase:hover video {
-  opacity: 1;
-}
+        /* Spans for Bento */
+        .span-6 {
+            grid-column: span 6;
+        }
 
-.video-showcase-content {
-  position: relative;
-  z-index: 2;
-  text-align: center;
-  pointer-events: none;
-}
+        .span-4 {
+            grid-column: span 4;
+        }
 
-.video-showcase h3 {
-  font-size: clamp(2rem, 4vw, 3rem);
-  color: #fff;
-  text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-}
+        .span-8 {
+            grid-column: span 8;
+        }
 
-/* Form Styles - Apple inspired */
-.contact-container {
-  max-width: 500px;
-  margin: 0 auto;
-  background: var(--card-bg);
-  padding: 40px;
-  border-radius: 32px;
-  border: 1px solid var(--card-border);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-}
+        .span-12 {
+            grid-column: span 12;
+        }
 
-input, textarea {
-  width: 100%;
-  padding: 18px 24px;
-  margin-bottom: 16px;
-  background: rgba(0, 0, 0, 0.2);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 16px;
-  color: var(--text-primary);
-  font-size: 1.05rem;
-  outline: none;
-  transition: all 0.3s ease;
-}
+        @media(max-width: 1024px) {
+            .span-4 {
+                grid-column: span 6;
+            }
 
-input::placeholder, textarea::placeholder {
-  color: #86868B;
-}
+            .span-8 {
+                grid-column: span 12;
+            }
+        }
 
-input:focus, textarea:focus {
-  border-color: rgba(255, 255, 255, 0.4);
-  background: rgba(0, 0, 0, 0.4);
-}
+        @media(max-width: 768px) {
 
-textarea {
-  resize: vertical;
-  min-height: 120px;
-}
+            .span-4,
+            .span-6,
+            .span-8,
+            .span-12 {
+                grid-column: span 12;
+            }
+        }
 
-button.submit-btn {
-  width: 100%;
-  background: var(--text-primary);
-  color: #000;
-  padding: 18px;
-  border: none;
-  border-radius: 16px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.3s ease;
-  margin-top: 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+        /* Sub-Video Section (Eye Catchy!) */
+        .video-showcase {
+            width: 100%;
+            border-radius: 32px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid var(--card-border);
+            aspect-ratio: 16/9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 2rem;
+            transform: translateZ(0);
+        }
 
-button.submit-btn:hover {
-  opacity: 0.9;
-  transform: scale(0.98);
-}
+        .video-showcase video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.8;
+            transition: opacity 0.5s ease;
+            will-change: opacity;
+        }
 
-/* Gallery Slider */
-.slider-container {
-  width: 100%;
-  overflow: hidden;
-  padding: 20px 0;
-  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-  transform: translateZ(0); /* Hardware Acceleration */
-}
+        .video-showcase:hover video {
+            opacity: 1;
+        }
 
-.slide-track {
-  display: flex;
-  gap: 32px;
-  width: calc(400px * 12 + 32px * 12);
-  animation: scroll 45s linear infinite;
-  will-change: transform;
-}
+        .video-showcase-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            pointer-events: none;
+        }
 
-.slide-track:hover {
-  animation-play-state: paused;
-}
+        .video-showcase h3 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: #fff;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+        }
 
-.slide-track img {
-  width: 400px;
-  height: 280px;
-  object-fit: cover;
-  border-radius: 24px;
-  opacity: 0.7;
-  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  border: 1px solid var(--card-border);
-}
+        /* Form Styles - Apple inspired */
+        .contact-container {
+            max-width: 500px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 32px;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
 
-.slide-track img:hover {
-  opacity: 1;
-  transform: scale(1.03);
-  box-shadow: 0 10px 40px rgba(0,0,0,0.5);
-}
+        input,
+        textarea {
+            width: 100%;
+            padding: 18px 24px;
+            margin-bottom: 16px;
+            background: rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
 
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-400px * 6 - 32px * 6)); }
-}
+        input::placeholder,
+        textarea::placeholder {
+            color: #86868B;
+        }
 
-/* WhatsApp Float */
-.whatsapp {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  background: rgba(255,255,255,0.1);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.2);
-  color: white;
-  width: 64px;
-  height: 64px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  text-decoration: none;
-  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
-  z-index: 99;
-  will-change: transform;
-}
+        input:focus,
+        textarea:focus {
+            border-color: rgba(255, 255, 255, 0.4);
+            background: rgba(0, 0, 0, 0.4);
+        }
 
-.whatsapp:hover {
-  transform: scale(1.15);
-  background: rgba(255,255,255,0.25);
-}
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
 
-/* Reveal Animations */
-.fade-el {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: opacity, transform;
-}
+        button.submit-btn {
+            width: 100%;
+            background: var(--text-primary);
+            color: #000;
+            padding: 18px;
+            border: none;
+            border-radius: 16px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s ease, opacity 0.3s ease;
+            margin-top: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.fade-el.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+        button.submit-btn:hover {
+            opacity: 0.9;
+            transform: scale(0.98);
+        }
 
-/* Hero Btn Specifics */
-.btn-primary-hero, .btn-secondary-hero {
-  padding: 16px 36px;
-  font-size: 1.1rem;
-}
+        /* Gallery Slider */
+        .slider-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+            mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+            transform: translateZ(0);
+            /* Hardware Acceleration */
+        }
 
-/* Footer Grid */
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 40px;
-  text-align: center;
-}
+        .slide-track {
+            display: flex;
+            gap: 32px;
+            width: calc(400px * 12 + 32px * 12);
+            animation: scroll 45s linear infinite;
+            will-change: transform;
+        }
 
-/* Mobile Adjustments */
-@media(max-width: 768px) {
-  .hero { padding: 0 6%; }
-  h1 { font-size: clamp(2.8rem, 11vw, 4rem); line-height: 1.1; }
-  h2 { font-size: clamp(1.8rem, 8vw, 3rem); }
-  .hero p { font-size: 1rem; margin-bottom: 2.2rem; }
-  .hero .cta-group { flex-direction: column; width: 100%; align-items: center; gap: 14px; }
-  .btn-primary-hero, .btn-secondary-hero { 
-    width: 100%; 
-    max-width: 320px; 
-    margin: 0 auto; /* Explicit Centering */
-    text-align: center; 
-    padding: 18px 20px; /* Slightly taller for distinct tap target */
-  }
-  .bento-item { padding: 30px 24px; }
-  .slide-track img { width: 280px; height: 200px; }
-  @keyframes scroll {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(calc(-280px * 6 - 32px * 6)); }
-  }
-}
-</style>
+        .slide-track:hover {
+            animation-play-state: paused;
+        }
+
+        .slide-track img {
+            width: 400px;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 24px;
+            opacity: 0.7;
+            transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            border: 1px solid var(--card-border);
+        }
+
+        .slide-track img:hover {
+            opacity: 1;
+            transform: scale(1.03);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(calc(-400px * 6 - 32px * 6));
+            }
+        }
+
+        /* WhatsApp Float */
+        .whatsapp {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            text-decoration: none;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), background 0.3s ease;
+            z-index: 99;
+            will-change: transform;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.15);
+            background: rgba(255, 255, 255, 0.25);
+        }
+
+        /* Reveal Animations */
+        .fade-el {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            will-change: opacity, transform;
+        }
+
+        .fade-el.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Hero Btn Specifics */
+        .btn-primary-hero,
+        .btn-secondary-hero {
+            padding: 16px 36px;
+            font-size: 1.1rem;
+        }
+
+        /* Footer Grid */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            text-align: center;
+        }
+
+        /* Mobile Adjustments */
+        @media(max-width: 768px) {
+            .hero {
+                padding: 0 6%;
+            }
+
+            h1 {
+                font-size: clamp(2.8rem, 11vw, 4rem);
+                line-height: 1.1;
+            }
+
+            h2 {
+                font-size: clamp(1.8rem, 8vw, 3rem);
+            }
+
+            .hero p {
+                font-size: 1rem;
+                margin-bottom: 2.2rem;
+            }
+
+            .hero .cta-group {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                gap: 14px;
+            }
+
+            .btn-primary-hero,
+            .btn-secondary-hero {
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
+                /* Explicit Centering */
+                text-align: center;
+                padding: 18px 20px;
+                /* Slightly taller for distinct tap target */
+            }
+
+            .bento-item {
+                padding: 30px 24px;
+            }
+
+            .slide-track img {
+                width: 280px;
+                height: 200px;
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-280px * 6 - 32px * 6));
+                }
+            }
+        }
+    </style>
 </head>
+
 <body>
 
-<nav>
-  <a href="#" class="logo">Jagdambaa.</a>
-  <a href="#enquiry" class="btn">Get Quote</a>
-</nav>
+    <nav>
+        <a href="#" class="logo">Jagdambaa.</a>
+        <a href="#enquiry" class="btn">Get Quote</a>
+    </nav>
 
-<!-- HERO: Utilizing UHD Video for highest quality impression -->
-<section class="hero">
-  <video autoplay muted loop playsinline preload="auto">
-    <source src="7614403-uhd_3840_2160_30fps.mp4" type="video/mp4">
-  </video>
-  <div class="hero-overlay"></div>
-  
-  <div class="fade-el visible" style="z-index: 1; width: 100%;">
-    <h1 class="text-gradient">Engineered for<br>Elegance.</h1>
-    <p>Premium textures, precision-crafted comfort, and unparalleled sleep quality. Welcome to the pinnacle of luxury living.</p>
-    <div class="cta-group">
-      <a href="#services" class="btn btn-primary-hero">Explore Collection</a>
-      <a href="#video-tour" class="btn-secondary btn-secondary-hero">Watch Showcase</a>
-    </div>
-  </div>
-</section>
-
-<!-- THE BENTO BOX SERVICES -->
-<div class="section" id="services">
-  <div class="section-header fade-el">
-    <h2>Details matter.<br><span class="text-gradient-subtle">Every single one.</span></h2>
-    <p>Discover our distinct crafts, shaped precisely to elevate your environment.</p>
-  </div>
-  
-  <div class="bento-grid">
-    <!-- Span 6 (Half width) -->
-    <div class="bento-item span-6 fade-el">
-      <div>
-        <div class="bento-icon">✨</div>
-        <h3>Finest Fabrics</h3>
-        <p>Tactile perfection. Upholstery sourced globally to offer enduring luxury, soft touch, and uncompromised durability.</p>
-      </div>
-    </div>
-    
-    <!-- Span 6 (Half width) -->
-    <div class="bento-item span-6 fade-el">
-      <div>
-        <div class="bento-icon">🛋️</div>
-        <h3>Bespoke Sofas</h3>
-        <p>Architected for your space. We craft custom profiles and luxury lounge seating customized down to the millimeter.</p>
-      </div>
-    </div>
-    
-    <!-- Span 12 (Full Width showcase video context) -->
-    <div class="bento-item span-12 fade-el" style="padding: 0; border: none; background: transparent;">
-      <div class="video-showcase" id="video-tour">
-        <!-- Re-using the same HD 1080p video as the browser will cache it locally saving massive RAM -->
+    <!-- HERO: Utilizing UHD Video for highest quality impression -->
+    <section class="hero">
         <video autoplay muted loop playsinline preload="auto">
-           <source src="9663211-hd_1920_1080_30fps.mp4" type="video/mp4">
+            <source src="9663211-hd_1920_1080_30fps.mp4" type="video/mp4">
         </video>
-        <div class="video-showcase-content">
-          <h3>The Art of Making.</h3>
+        <div class="hero-overlay"></div>
+
+        <div class="fade-el visible" style="z-index: 1; width: 100%;">
+            <h1 class="text-gradient">Engineered for<br>Elegance.</h1>
+            <p>Premium textures, precision-crafted comfort, and unparalleled sleep quality. Welcome to the pinnacle of
+                luxury living.</p>
+            <div class="cta-group">
+                <a href="#services" class="btn btn-primary-hero">Explore Collection</a>
+                <a href="#video-tour" class="btn-secondary btn-secondary-hero">Watch Showcase</a>
+            </div>
         </div>
-      </div>
+    </section>
+
+    <!-- THE BENTO BOX SERVICES -->
+    <div class="section" id="services">
+        <div class="section-header fade-el">
+            <h2>Details matter.<br><span class="text-gradient-subtle">Every single one.</span></h2>
+            <p>Discover our distinct crafts, shaped precisely to elevate your environment.</p>
+        </div>
+
+        <div class="bento-grid">
+            <!-- Span 6 (Half width) -->
+            <div class="bento-item span-6 fade-el">
+                <div>
+                    <div class="bento-icon">✨</div>
+                    <h3>Finest Fabrics</h3>
+                    <p>Tactile perfection. Upholstery sourced globally to offer enduring luxury, soft touch, and
+                        uncompromised durability.</p>
+                </div>
+            </div>
+
+            <!-- Span 6 (Half width) -->
+            <div class="bento-item span-6 fade-el">
+                <div>
+                    <div class="bento-icon">🛋️</div>
+                    <h3>Bespoke Sofas</h3>
+                    <p>Architected for your space. We craft custom profiles and luxury lounge seating customized down to
+                        the millimeter.</p>
+                </div>
+            </div>
+
+            <!-- Span 12 (Full Width showcase video context) -->
+            <div class="bento-item span-12 fade-el" style="padding: 0; border: none; background: transparent;">
+                <div class="video-showcase" id="video-tour">
+                    <!-- Re-using the same HD 1080p video as the browser will cache it locally saving massive RAM -->
+                    <video autoplay muted loop playsinline preload="auto">
+                        <source src="7614403-uhd_3840_2160_30fps.mp4" type="video/mp4">
+                    </video>
+                    <div class="video-showcase-content">
+                        <h3>The Art of Making.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Span 4 (Third width) -->
+            <div class="bento-item span-4 fade-el">
+                <div>
+                    <div class="bento-icon">🛠️</div>
+                    <h3>Restoration</h3>
+                    <p>Give life back to beloved furniture. Structural overhauls and premium cushioning replacements.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Span 8 (Two thirds width) -->
+            <div class="bento-item span-8 fade-el">
+                <div>
+                    <div class="bento-icon">🛏️</div>
+                    <h3>Premium Sleepwell Mattresses</h3>
+                    <p>The foundation of wellbeing. Experience an elite suite of foam, coir, and orthopaedic mattresses.
+                        Wake up elevated every day.</p>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <!-- Span 4 (Third width) -->
-    <div class="bento-item span-4 fade-el">
-      <div>
-        <div class="bento-icon">🛠️</div>
-        <h3>Restoration</h3>
-        <p>Give life back to beloved furniture. Structural overhauls and premium cushioning replacements.</p>
-      </div>
+    <div class="section" style="padding-top: 0;">
+        <div class="section-header fade-el">
+            <h2>A Visual Tour.</h2>
+            <p>Gaze upon the environments we've brought to life.</p>
+        </div>
+
+        <div class="slider-container fade-el">
+            <div class="slide-track">
+                <img src="images/sofa1.jpg" alt="Luxury Sofa"
+                    onerror="this.src='https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=800&auto=format&fit=crop'"
+                    loading="lazy">
+                <img src="images/sofa2.jpg" alt="Luxury Sofa"
+                    onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop'"
+                    loading="lazy">
+                <img src="images/sofa3.jpg" alt="Luxury Sofa"
+                    onerror="this.src='https://images.unsplash.com/photo-1550226891-ef816a84cfa5?q=80&w=800&auto=format&fit=crop'"
+                    loading="lazy">
+                <img src="images/sofa4.jpg" alt="Luxury Sofa"
+                    onerror="this.src='https://images.unsplash.com/photo-1540574163026-643ea20d25b5?q=80&w=800&auto=format&fit=crop'"
+                    loading="lazy">
+                <img src="images/sofa5.jpg" alt="Luxury Sofa"
+                    onerror="this.src='https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=800&auto=format&fit=crop'"
+                    loading="lazy">
+                <img src="images/sofa6.jpg" alt="Luxury Sofa"
+                    onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop'"
+                    loading="lazy">
+                <img src="images/sofa1.jpg" alt="Luxury Sofa"
+                    onerror="this.src='https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=800&auto=format&fit=crop'"
+                    loading="lazy">
+                <img src="images/sofa2.jpg" alt="Luxury Sofa"
+                    onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop'"
+                    loading="lazy">
+                <img src="images/sofa3.jpg" alt="Luxury Sofa"
+                    onerror="this.src='https://images.unsplash.com/photo-1550226891-ef816a84cfa5?q=80&w=800&auto=format&fit=crop'"
+                    loading="lazy">
+                <img src="images/sofa4.jpg" alt="Luxury Sofa"
+                    onerror="this.src='https://images.unsplash.com/photo-1540574163026-643ea20d25b5?q=80&w=800&auto=format&fit=crop'"
+                    loading="lazy">
+                <img src="images/sofa5.jpg" alt="Luxury Sofa"
+                    onerror="this.src='https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=800&auto=format&fit=crop'"
+                    loading="lazy">
+                <img src="images/sofa6.jpg" alt="Luxury Sofa"
+                    onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop'"
+                    loading="lazy">
+            </div>
+        </div>
     </div>
 
-    <!-- Span 8 (Two thirds width) -->
-    <div class="bento-item span-8 fade-el">
-      <div>
-        <div class="bento-icon">🛏️</div>
-        <h3>Premium Sleepwell Mattresses</h3>
-        <p>The foundation of wellbeing. Experience an elite suite of foam, coir, and orthopaedic mattresses. Wake up elevated every day.</p>
-      </div>
+    <div class="section" id="enquiry">
+        <div class="section-header fade-el">
+            <h2>Let's talk.</h2>
+            <p>Expert consultants ready to transform your space.</p>
+        </div>
+
+        <div class="contact-container fade-el">
+            <form id="waForm">
+                <input type="text" id="name" placeholder="Full Name" required>
+                <input type="tel" id="phone" placeholder="Contact Number" required>
+                <textarea id="msg" placeholder="Tell us about your space..."></textarea>
+                <button type="submit" class="submit-btn">Continue on WhatsApp</button>
+            </form>
+        </div>
     </div>
-  </div>
-</div>
 
-<div class="section" style="padding-top: 0;">
-  <div class="section-header fade-el">
-    <h2>A Visual Tour.</h2>
-    <p>Gaze upon the environments we've brought to life.</p>
-  </div>
-  
-  <div class="slider-container fade-el">
-    <div class="slide-track">
-      <img src="images/sofa1.jpg" alt="Luxury Sofa" onerror="this.src='https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=800&auto=format&fit=crop'" loading="lazy">
-      <img src="images/sofa2.jpg" alt="Luxury Sofa" onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop'" loading="lazy">
-      <img src="images/sofa3.jpg" alt="Luxury Sofa" onerror="this.src='https://images.unsplash.com/photo-1550226891-ef816a84cfa5?q=80&w=800&auto=format&fit=crop'" loading="lazy">
-      <img src="images/sofa4.jpg" alt="Luxury Sofa" onerror="this.src='https://images.unsplash.com/photo-1540574163026-643ea20d25b5?q=80&w=800&auto=format&fit=crop'" loading="lazy">
-      <img src="images/sofa5.jpg" alt="Luxury Sofa" onerror="this.src='https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=800&auto=format&fit=crop'" loading="lazy">
-      <img src="images/sofa6.jpg" alt="Luxury Sofa" onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop'" loading="lazy">
-      <img src="images/sofa1.jpg" alt="Luxury Sofa" onerror="this.src='https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=800&auto=format&fit=crop'" loading="lazy">
-      <img src="images/sofa2.jpg" alt="Luxury Sofa" onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop'" loading="lazy">
-      <img src="images/sofa3.jpg" alt="Luxury Sofa" onerror="this.src='https://images.unsplash.com/photo-1550226891-ef816a84cfa5?q=80&w=800&auto=format&fit=crop'" loading="lazy">
-      <img src="images/sofa4.jpg" alt="Luxury Sofa" onerror="this.src='https://images.unsplash.com/photo-1540574163026-643ea20d25b5?q=80&w=800&auto=format&fit=crop'" loading="lazy">
-      <img src="images/sofa5.jpg" alt="Luxury Sofa" onerror="this.src='https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=800&auto=format&fit=crop'" loading="lazy">
-      <img src="images/sofa6.jpg" alt="Luxury Sofa" onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop'" loading="lazy">
+    <div class="section" style="padding-top: 20px; padding-bottom: 80px;">
+        <div class="footer-grid">
+            <div class="fade-el">
+                <h3>Store</h3>
+                <p style="margin: 0 auto; font-size: 1rem;">A-24, 60 Feet Road,<br>Pul Pehladpur,<br>Delhi 110044</p>
+            </div>
+            <div class="fade-el">
+                <h3>Connect</h3>
+                <p style="margin: 0 auto; font-size: 1rem;">+91 8882256437<br>+91 7042680172</p>
+            </div>
+            <div class="fade-el">
+                <h3>Direct</h3>
+                <p style="margin: 0 auto; font-size: 1rem;">dhruvaggarwal917@gmail.com</p>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
 
-<div class="section" id="enquiry">
-  <div class="section-header fade-el">
-    <h2>Let's talk.</h2>
-    <p>Expert consultants ready to transform your space.</p>
-  </div>
-  
-  <div class="contact-container fade-el">
-    <form id="waForm">
-      <input type="text" id="name" placeholder="Full Name" required>
-      <input type="tel" id="phone" placeholder="Contact Number" required>
-      <textarea id="msg" placeholder="Tell us about your space..."></textarea>
-      <button type="submit" class="submit-btn">Continue on WhatsApp</button>
-    </form>
-  </div>
-</div>
+    <a href="https://wa.me/917042680172" class="whatsapp">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+            </path>
+        </svg>
+    </a>
 
-<div class="section" style="padding-top: 20px; padding-bottom: 80px;">
-  <div class="footer-grid">
-    <div class="fade-el">
-      <h3>Studio</h3>
-      <p style="margin: 0 auto; font-size: 1rem;">A-24, 60 Feet Road,<br>Pul Pehladpur,<br>Delhi 110044</p>
-    </div>
-    <div class="fade-el">
-      <h3>Connect</h3>
-      <p style="margin: 0 auto; font-size: 1rem;">+91 8882256437<br>+91 7042680172</p>
-    </div>
-    <div class="fade-el">
-      <h3>Direct</h3>
-      <p style="margin: 0 auto; font-size: 1rem;">dhruvaggarwal917@gmail.com</p>
-    </div>
-  </div>
-</div>
+    <script>
+        document.getElementById("waForm").addEventListener("submit", function (e) {
+            e.preventDefault();
+            const name = document.getElementById("name").value.trim();
+            const phone = document.getElementById("phone").value.trim();
+            const msg = document.getElementById("msg").value.trim();
+            const text = `Name: ${name}%0APhone: ${phone}%0ARequirements: ${msg}`;
+            window.open(`https://wa.me/917042680172?text=${text}`);
+        });
 
-<a href="https://wa.me/917042680172" class="whatsapp">
-  <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-  </svg>
-</a>
+        const observerOptions = {
+            root: null,
+            rootMargin: "-20px",
+            threshold: 0.05
+        };
 
-<script>
-  document.getElementById("waForm").addEventListener("submit", function(e){
-    e.preventDefault();
-    const name = document.getElementById("name").value.trim();
-    const phone = document.getElementById("phone").value.trim();
-    const msg = document.getElementById("msg").value.trim();
-    const text = `Name: ${name}%0APhone: ${phone}%0ARequirements: ${msg}`;
-    window.open(`https://wa.me/917042680172?text=${text}`);
-  });
+        const observer = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
 
-  const observerOptions = {
-    root: null,
-    rootMargin: "-20px",
-    threshold: 0.05
-  };
-
-  const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, observerOptions);
-
-  document.querySelectorAll('.fade-el:not(.visible)').forEach((el) => {
-    observer.observe(el);
-  });
-</script>
+        document.querySelectorAll('.fade-el:not(.visible)').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
 
 </body>
+
 </html>
