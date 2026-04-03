@@ -11,14 +11,14 @@
     <style>
         /* Base iOS Theme Reset */
         :root {
-            --bg-color: #000000;
+            --bg-color: #000411;
             --text-primary: #F5F5F7;
-            --text-secondary: #86868B;
-            --card-bg: rgba(255, 255, 255, 0.03);
-            --card-border: rgba(255, 255, 255, 0.08);
+            --text-secondary: #94A3B8;
+            --card-bg: rgba(29, 78, 216, 0.04);
+            --card-border: rgba(29, 78, 216, 0.15);
             /* slightly higher visibility without blur lag */
-            --accent: #ffffff;
-            --apple-blue: #2997ff;
+            --accent: #2563EB;
+            --apple-blue: #3B82F6;
         }
 
         * {
@@ -68,14 +68,14 @@
 
         /* Gradient Text for Premium Feel */
         .text-gradient {
-            background: linear-gradient(135deg, #ffffff 0%, #a1a1a6 100%);
+            background: linear-gradient(135deg, #FFFFFF 0%, #60A5FA 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .text-gradient-subtle {
-            background: linear-gradient(90deg, #d2d2d7 0%, #86868b 100%);
+            background: linear-gradient(90deg, #93C5FD 0%, #3B82F6 100%);
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -183,14 +183,19 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.85) 100%);
+            background: radial-gradient(circle at center, rgba(0, 4, 17, 0.55) 0%, rgba(0, 4, 17, 0.95) 100%);
             z-index: -1;
         }
 
+        .hero h1 {
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
+        }
+
         .hero p {
-            color: #A1A1A6;
+            color: #F8FAFC;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
             margin-top: 1.5rem;
-            font-weight: 400;
+            font-weight: 500;
             margin-bottom: 3rem;
             margin-left: auto;
             margin-right: auto;
@@ -398,43 +403,55 @@
             transform: scale(0.98);
         }
 
-        /* Gallery Slider */
+        /* Brand Slider - Royal Blue Theme */
         .slider-container {
             width: 100%;
             overflow: hidden;
-            padding: 20px 0;
+            padding: 30px 0;
             mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
             transform: translateZ(0);
-            /* Hardware Acceleration */
         }
 
         .slide-track {
             display: flex;
-            gap: 32px;
-            width: calc(400px * 12 + 32px * 12);
-            animation: scroll 45s linear infinite;
+            gap: 40px;
+            width: calc(300px * 12 + 40px * 12);
+            animation: scroll 30s linear infinite;
             will-change: transform;
+            align-items: center;
         }
 
         .slide-track:hover {
             animation-play-state: paused;
         }
 
-        .slide-track img {
-            width: 400px;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 24px;
-            opacity: 0.7;
-            transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-            border: 1px solid var(--card-border);
+        .brand-item {
+            width: 300px;
+            height: 120px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(145deg, rgba(37, 99, 235, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+            border: 1px solid rgba(59, 130, 246, 0.3);
+            border-radius: 20px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #EFF6FF;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
         }
 
-        .slide-track img:hover {
-            opacity: 1;
-            transform: scale(1.03);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        .brand-item:hover {
+            background: linear-gradient(145deg, rgba(37, 99, 235, 0.2) 0%, rgba(29, 78, 216, 0.1) 100%);
+            transform: translateY(-8px) scale(1.02);
+            border-color: rgba(96, 165, 250, 0.6);
+            color: #FFF;
+            box-shadow: 0 12px 30px rgba(37, 99, 235, 0.4);
         }
 
         @keyframes scroll {
@@ -443,7 +460,7 @@
             }
 
             100% {
-                transform: translateX(calc(-400px * 6 - 32px * 6));
+                transform: translateX(calc(-300px * 4 - 40px * 4));
             }
         }
 
@@ -546,9 +563,10 @@
                 padding: 30px 24px;
             }
 
-            .slide-track img {
-                width: 280px;
-                height: 200px;
+            .brand-item {
+                width: 240px;
+                height: 100px;
+                font-size: 1.3rem;
             }
 
             @keyframes scroll {
@@ -557,7 +575,7 @@
                 }
 
                 100% {
-                    transform: translateX(calc(-280px * 6 - 32px * 6));
+                    transform: translateX(calc(-240px * 4 - 40px * 4));
                 }
             }
         }
@@ -589,113 +607,29 @@
         </div>
     </section>
 
-    <!-- THE BENTO BOX SERVICES -->
+    <!-- TRUSTED BRANDS SLIDER -->
     <div class="section" id="services">
         <div class="section-header fade-el">
-            <h2>Details matter.<br><span class="text-gradient-subtle">Every single one.</span></h2>
-            <p>Discover our distinct crafts, shaped precisely to elevate your environment.</p>
-        </div>
-
-        <div class="bento-grid">
-            <!-- Span 6 (Half width) -->
-            <div class="bento-item span-6 fade-el">
-                <div>
-                    <div class="bento-icon">✨</div>
-                    <h3>Finest Fabrics</h3>
-                    <p>Tactile perfection. Upholstery sourced globally to offer enduring luxury, soft touch, and
-                        uncompromised durability.</p>
-                </div>
-            </div>
-
-            <!-- Span 6 (Half width) -->
-            <div class="bento-item span-6 fade-el">
-                <div>
-                    <div class="bento-icon">🛋️</div>
-                    <h3>Bespoke Sofas</h3>
-                    <p>Architected for your space. We craft custom profiles and luxury lounge seating customized down to
-                        the millimeter.</p>
-                </div>
-            </div>
-
-            <!-- Span 12 (Full Width showcase video context) -->
-            <div class="bento-item span-12 fade-el" style="padding: 0; border: none; background: transparent;">
-                <div class="video-showcase" id="video-tour">
-                    <!-- Re-using the same HD 1080p video as the browser will cache it locally saving massive RAM -->
-                    <video autoplay muted loop playsinline preload="auto">
-                        <source src="7614403-uhd_3840_2160_30fps.mp4" type="video/mp4">
-                    </video>
-                    <div class="video-showcase-content">
-                        <h3>The Art of Making.</h3>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Span 4 (Third width) -->
-            <div class="bento-item span-4 fade-el">
-                <div>
-                    <div class="bento-icon">🛠️</div>
-                    <h3>Restoration</h3>
-                    <p>Give life back to beloved furniture. Structural overhauls and premium cushioning replacements.
-                    </p>
-                </div>
-            </div>
-
-            <!-- Span 8 (Two thirds width) -->
-            <div class="bento-item span-8 fade-el">
-                <div>
-                    <div class="bento-icon">🛏️</div>
-                    <h3>Premium Sleepwell Mattresses</h3>
-                    <p>The foundation of wellbeing. Experience an elite suite of foam, coir, and orthopaedic mattresses.
-                        Wake up elevated every day.</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="section" style="padding-top: 0;">
-        <div class="section-header fade-el">
-            <h2>A Visual Tour.</h2>
-            <p>Gaze upon the environments we've brought to life.</p>
+            <h2>Trusted Quality.</h2>
+            <p>We partner with the foremost names in comfort.</p>
         </div>
 
         <div class="slider-container fade-el">
             <div class="slide-track">
-                <img src="images/sofa1.jpg" alt="Luxury Sofa"
-                    onerror="this.src='https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=800&auto=format&fit=crop'"
-                    loading="lazy">
-                <img src="images/sofa2.jpg" alt="Luxury Sofa"
-                    onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop'"
-                    loading="lazy">
-                <img src="images/sofa3.jpg" alt="Luxury Sofa"
-                    onerror="this.src='https://images.unsplash.com/photo-1550226891-ef816a84cfa5?q=80&w=800&auto=format&fit=crop'"
-                    loading="lazy">
-                <img src="images/sofa4.jpg" alt="Luxury Sofa"
-                    onerror="this.src='https://images.unsplash.com/photo-1540574163026-643ea20d25b5?q=80&w=800&auto=format&fit=crop'"
-                    loading="lazy">
-                <img src="images/sofa5.jpg" alt="Luxury Sofa"
-                    onerror="this.src='https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=800&auto=format&fit=crop'"
-                    loading="lazy">
-                <img src="images/sofa6.jpg" alt="Luxury Sofa"
-                    onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop'"
-                    loading="lazy">
-                <img src="images/sofa1.jpg" alt="Luxury Sofa"
-                    onerror="this.src='https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?q=80&w=800&auto=format&fit=crop'"
-                    loading="lazy">
-                <img src="images/sofa2.jpg" alt="Luxury Sofa"
-                    onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop'"
-                    loading="lazy">
-                <img src="images/sofa3.jpg" alt="Luxury Sofa"
-                    onerror="this.src='https://images.unsplash.com/photo-1550226891-ef816a84cfa5?q=80&w=800&auto=format&fit=crop'"
-                    loading="lazy">
-                <img src="images/sofa4.jpg" alt="Luxury Sofa"
-                    onerror="this.src='https://images.unsplash.com/photo-1540574163026-643ea20d25b5?q=80&w=800&auto=format&fit=crop'"
-                    loading="lazy">
-                <img src="images/sofa5.jpg" alt="Luxury Sofa"
-                    onerror="this.src='https://images.unsplash.com/photo-1505693314120-0d443867891c?q=80&w=800&auto=format&fit=crop'"
-                    loading="lazy">
-                <img src="images/sofa6.jpg" alt="Luxury Sofa"
-                    onerror="this.src='https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop'"
-                    loading="lazy">
+                <div class="brand-item">Sleepwell</div>
+                <div class="brand-item">Allied Foams</div>
+                <div class="brand-item">Signature</div>
+                <div class="brand-item">Coir Foam</div>
+                
+                <div class="brand-item">Sleepwell</div>
+                <div class="brand-item">Allied Foams</div>
+                <div class="brand-item">Signature</div>
+                <div class="brand-item">Coir Foam</div>
+                
+                <div class="brand-item">Sleepwell</div>
+                <div class="brand-item">Allied Foams</div>
+                <div class="brand-item">Signature</div>
+                <div class="brand-item">Coir Foam</div>
             </div>
         </div>
     </div>
@@ -727,8 +661,15 @@
                 <p style="margin: 0 auto; font-size: 1rem;">+91 8882256437<br>+91 7042680172</p>
             </div>
             <div class="fade-el">
-                <h3>Direct</h3>
-                <p style="margin: 0 auto; font-size: 1rem;">dhruvaggarwal917@gmail.com</p>
+                <h3>Instagram</h3>
+                <a href="https://instagram.com/jagdambaafoam" target="_blank" style="color: var(--text-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 1rem; margin-top: 10px; transition: color 0.3s;" onmouseover="this.style.color='#60A5FA'" onmouseout="this.style.color='var(--text-primary)'">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                    @jagdambaafoam
+                </a>
             </div>
         </div>
     </div>
