@@ -579,6 +579,101 @@
                 }
             }
         }
+
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .product-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 32px;
+            overflow: hidden;
+            transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.4s ease, box-shadow 0.4s ease;
+            will-change: transform;
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px) scale(1.02);
+            border-color: rgba(59, 130, 246, 0.4);
+            box-shadow: 0 20px 60px rgba(37, 99, 235, 0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .product-card:hover .product-image img {
+            transform: scale(1.08);
+        }
+
+        .product-content {
+            padding: 32px;
+        }
+
+        .product-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+
+        .product-content h3 {
+            margin-bottom: 12px;
+            font-size: 1.5rem;
+        }
+
+        .product-content p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        .product-features {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .product-features li {
+            background: rgba(37, 99, 235, 0.1);
+            border: 1px solid rgba(59, 130, 246, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            color: #93C5FD;
+            font-weight: 500;
+        }
+
+        @media(max-width: 768px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .product-image {
+                height: 220px;
+            }
+
+            .product-content {
+                padding: 24px;
+            }
+        }
     </style>
 </head>
 
@@ -597,9 +692,9 @@
         <div class="hero-overlay"></div>
 
         <div class="fade-el visible" style="z-index: 1; width: 100%;">
-            <h1 class="text-gradient">Engineered for<br>Elegance.</h1>
-            <p>Premium textures, precision-crafted comfort, and unparalleled sleep quality. Welcome to the pinnacle of
-                luxury living.</p>
+            <h1 class="text-gradient">Luxuary Sofa Fabric & <br> Mattress Store in Delhi.</h1>
+            <p>Premium textures, precision-crafted comfort, and unparalleled sleep quality.
+            </p>
             <div class="cta-group">
                 <a href="#services" class="btn btn-primary-hero">Explore Collection</a>
                 <a href="#video-tour" class="btn-secondary btn-secondary-hero">Watch Showcase</a>
@@ -642,11 +737,76 @@
         </div>
 
         <div class="video-showcase fade-el" style="margin-top: 0;">
-            <video autoplay muted loop playsinline preload="auto" poster="images/video-poster.jpg" onerror="this.poster='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop'">
+            <video autoplay muted loop playsinline preload="auto" poster="images/video-poster.jpg"
+                onerror="this.poster='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1200&auto=format&fit=crop'">
                 <source src="7614403-uhd_3840_2160_30fps.mp4" type="video/mp4">
             </video>
             <div class="video-showcase-content">
                 <h3>Made with Care.</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- PRODUCTS SECTION -->
+    <div class="section" id="products">
+        <div class="section-header fade-el">
+            <h2>Our Collection.</h2>
+            <p>Discover premium comfort crafted for every corner of your home.</p>
+        </div>
+
+        <div class="products-grid">
+            <!-- Sofa Product -->
+            <div class="product-card fade-el">
+                <div class="product-image">
+                    <img src="images/sofa-collection.jpg" alt="Premium Sofas" loading="lazy"
+                        onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop'">
+                </div>
+                <div class="product-content">
+                    <div class="product-icon">🛋️</div>
+                    <h3>Luxury Sofas</h3>
+                    <p>Elegant designs upholstered in premium fabrics. From contemporary sectionals to classic chesterfields, crafted for lasting comfort.</p>
+                    <ul class="product-features">
+                        <li>Custom dimensions</li>
+                        <li>Premium upholstery</li>
+                        <li>10-year warranty</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Mattress Product -->
+            <div class="product-card fade-el">
+                <div class="product-image">
+                    <img src="images/mattress-collection.jpg" alt="Premium Mattresses" loading="lazy"
+                        onerror="this.src='https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop'">
+                </div>
+                <div class="product-content">
+                    <div class="product-icon">🛏️</div>
+                    <h3>Sleepwell Mattresses</h3>
+                    <p>Orthopedic support meets cloud-like comfort. Memory foam, coir, and spring mattresses for the sleep you deserve.</p>
+                    <ul class="product-features">
+                        <li>Orthopedic support</li>
+                        <li>Breathable fabric</li>
+                        <li>15-year warranty</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Pillow Product -->
+            <div class="product-card fade-el">
+                <div class="product-image">
+                    <img src="images/pillow-collection.jpg" alt="Premium Pillows" loading="lazy"
+                        onerror="this.src='https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?q=80&w=800&auto=format&fit=crop'">
+                </div>
+                <div class="product-content">
+                    <div class="product-icon">🌙</div>
+                    <h3>Comfort Pillows</h3>
+                    <p>Soft, supportive, and perfectly shaped. Our pillows cradle your neck and head for deep, restorative sleep.</p>
+                    <ul class="product-features">
+                        <li>Memory foam fill</li>
+                        <li>Hypoallergenic cover</li>
+                        <li>5-year warranty</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
