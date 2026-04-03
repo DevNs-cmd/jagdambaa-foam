@@ -693,6 +693,93 @@
                 font-size: 0.82rem;
             }
         }
+
+        /* Instagram Icon Only */
+        .insta-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-primary);
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .insta-link svg {
+            width: 32px;
+            height: 32px;
+            stroke: currentColor;
+            transition: all 0.3s ease;
+        }
+
+        .insta-link:hover {
+            color: #E1306C;
+            transform: scale(1.1);
+        }
+
+        .insta-link:hover svg {
+            stroke: #E1306C;
+        }
+
+        /* Enhanced Footer Responsiveness */
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        @media(max-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .footer-grid .fade-el {
+                padding: 0 20px;
+            }
+        }
+
+        /* Responsive Typography Improvements */
+        @media(max-width: 480px) {
+            h1 {
+                font-size: clamp(2.2rem, 10vw, 3rem);
+            }
+
+            h2 {
+                font-size: clamp(1.5rem, 6vw, 2rem);
+            }
+
+            .section {
+                padding: 60px 5%;
+            }
+
+            .btn-primary-hero,
+            .btn-secondary-hero {
+                width: 100%;
+                max-width: 280px;
+            }
+        }
+
+        /* Responsive Video Showcase */
+        @media(max-width: 768px) {
+            .video-showcase {
+                aspect-ratio: 16/10;
+                border-radius: 20px;
+            }
+
+            .video-showcase h3 {
+                font-size: 1.5rem;
+            }
+        }
+
+        @media(max-width: 480px) {
+            .video-showcase {
+                aspect-ratio: 4/3;
+                border-radius: 16px;
+            }
+        }
     </style>
 </head>
 
@@ -858,16 +945,13 @@
             </div>
             <div class="fade-el">
                 <h3>Instagram</h3>
-                <a href="https://instagram.com/jagdambaafoam" target="_blank"
-                    style="color: var(--text-primary); text-decoration: none; display: inline-flex; align-items: center; gap: 8px; font-size: 1rem; margin-top: 10px; transition: color 0.3s;"
-                    onmouseover="this.style.color='#60A5FA'" onmouseout="this.style.color='var(--text-primary)'">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                <a href="https://instagram.com/jagdambaafoam" target="_blank" class="insta-link" aria-label="Follow us on Instagram">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
                         stroke-linecap="round" stroke-linejoin="round">
                         <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                         <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                         <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                     </svg>
-                    @jagdambaafoam
                 </a>
             </div>
         </div>
