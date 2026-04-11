@@ -32,10 +32,20 @@
 
         html,
         body {
-            max-width: 100%;
+            max-width: 100vw;
             overflow-x: hidden;
             margin: 0;
             padding: 0;
+        }
+
+        /* Prevent any element from causing horizontal overflow */
+        * {
+            max-width: 100%;
+        }
+
+        img, video, iframe, svg {
+            max-width: 100%;
+            height: auto;
         }
 
         body {
@@ -555,17 +565,19 @@
         /* Brand Slider - Royal Blue Theme */
         .slider-container {
             width: 100%;
+            max-width: 100vw;
             overflow: hidden;
             padding: 30px 0;
             mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
             transform: translateZ(0);
+            box-sizing: border-box;
         }
 
         .slide-track {
             display: flex;
             gap: 40px;
-            width: calc(300px * 12 + 40px * 12);
+            width: max-content;
             animation: scroll 30s linear infinite;
             will-change: transform;
             align-items: center;
@@ -616,17 +628,19 @@
         /* Image Slider - Gallery Theme */
         .image-slider-container {
             width: 100%;
+            max-width: 100vw;
             overflow: hidden;
             padding: 30px 0;
             mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
             -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
             transform: translateZ(0);
+            box-sizing: border-box;
         }
 
         .image-slide-track {
             display: flex;
             gap: 20px;
-            width: calc(300px * 20 + 20px * 20);
+            width: max-content;
             animation: scroll-images 45s linear infinite;
             will-change: transform;
             align-items: center;
@@ -857,7 +871,7 @@
                 padding: 30px 24px;
                 border-radius: 20px;
             }
-            
+
             .modal-close {
                 top: 16px;
                 right: 16px;
@@ -865,12 +879,12 @@
                 height: 32px;
                 font-size: 1.2rem;
             }
-            
+
             .responsive-modal-title {
                 font-size: 1.45rem;
                 margin-bottom: 1rem !important;
             }
-            
+
             .responsive-modal-body {
                 font-size: 0.95rem;
             }
@@ -929,9 +943,9 @@
             }
 
             .brand-item {
-                width: 240px;
-                height: 100px;
-                font-size: 1.3rem;
+                width: 220px;
+                height: 90px;
+                font-size: 1.2rem;
             }
 
             @keyframes scroll {
@@ -940,17 +954,13 @@
                 }
 
                 100% {
-                    transform: translateX(calc(-240px * 4 - 40px * 4));
+                    transform: translateX(calc(-220px * 4 - 40px * 4));
                 }
             }
 
             .image-item {
-                width: 240px;
-                height: 180px;
-            }
-
-            .image-slide-track {
-                width: calc(240px * 20 + 20px * 20);
+                width: 260px;
+                height: 195px;
             }
 
             @keyframes scroll-images {
@@ -959,7 +969,7 @@
                 }
 
                 100% {
-                    transform: translateX(calc(-240px * 10 - 20px * 10));
+                    transform: translateX(calc(-260px * 10 - 20px * 10));
                 }
             }
         }
@@ -1128,21 +1138,77 @@
         /* Responsive Typography Improvements */
         @media(max-width: 480px) {
             h1 {
-                font-size: clamp(2.2rem, 10vw, 3rem);
+                font-size: clamp(2rem, 9vw, 2.8rem);
             }
 
             h2 {
-                font-size: clamp(1.5rem, 6vw, 2rem);
+                font-size: clamp(1.4rem, 6vw, 1.8rem);
             }
 
             .section {
-                padding: 60px 5%;
+                padding: 50px 4%;
             }
 
             .btn-primary-hero,
             .btn-secondary-hero {
                 width: 100%;
                 max-width: 280px;
+                padding: 16px 20px;
+                font-size: 1rem;
+            }
+
+            .brand-item {
+                width: 180px;
+                height: 80px;
+                font-size: 1rem;
+            }
+
+            @keyframes scroll {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-180px * 4 - 40px * 4));
+                }
+            }
+
+            .image-item {
+                width: 200px;
+                height: 150px;
+            }
+
+            @keyframes scroll-images {
+                0% {
+                    transform: translateX(0);
+                }
+
+                100% {
+                    transform: translateX(calc(-200px * 10 - 20px * 10));
+                }
+            }
+
+            .hero-badge {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+            }
+
+            .social-btn {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+
+            .cta-buttons-container {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .whatsapp {
+                width: 56px;
+                height: 56px;
+                font-size: 24px;
+                bottom: 20px;
+                right: 20px;
             }
         }
 
@@ -1156,12 +1222,65 @@
             .video-showcase h3 {
                 font-size: 1.5rem;
             }
+
+            /* Fix slider containers on mobile */
+            .slider-container,
+            .image-slider-container {
+                max-width: 100vw;
+                margin-left: 0;
+                margin-right: 0;
+            }
         }
 
         @media(max-width: 480px) {
             .video-showcase {
                 aspect-ratio: 4/3;
                 border-radius: 16px;
+            }
+
+            /* Adjust SEO bento sections */
+            .seo-bento-img {
+                aspect-ratio: 16/12;
+                max-height: 200px;
+            }
+
+            /* Ensure footer elements fit */
+            .footer-grid > div {
+                padding: 0 10px;
+            }
+
+            /* Fix product features wrapping */
+            .product-features {
+                justify-content: center;
+            }
+
+            .product-features li {
+                font-size: 0.7rem;
+                padding: 4px 10px;
+            }
+        }
+
+        /* Extra small screens */
+        @media(max-width: 360px) {
+            .hero h1 {
+                font-size: 1.6rem;
+            }
+
+            .hero p {
+                font-size: 0.9rem;
+            }
+
+            .btn {
+                padding: 8px 14px;
+                font-size: 0.8rem;
+            }
+
+            .logo {
+                font-size: 1rem;
+            }
+
+            nav {
+                padding: 12px 4%;
             }
         }
     </style>
