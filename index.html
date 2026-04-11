@@ -1572,6 +1572,15 @@
         </svg>
     </a>
 
+    <!-- Info Modal HTML -->
+    <div id="info-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">✕</button>
+            <h3 id="modal-title" style="font-size: 2rem; margin-bottom: 1.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Title</h3>
+            <div id="modal-body" style="color: var(--text-secondary); line-height: 1.6; font-size: 1.05rem;">Body</div>
+        </div>
+    </div>
+
     <script>
 
 
@@ -1676,15 +1685,6 @@
             if(e.target === this || e.target.classList.contains('modal-content')) closeModal();
         });
     </script>
-
-    <!-- Info Modal HTML -->
-    <div id="info-modal" class="modal-overlay">
-        <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">✕</button>
-            <h3 id="modal-title" style="font-size: 2rem; margin-bottom: 1.5rem; text-shadow: 0 2px 10px rgba(0,0,0,0.5);">Title</h3>
-            <div id="modal-body" style="color: var(--text-secondary); line-height: 1.6; font-size: 1.05rem;">Body</div>
-        </div>
-    </div>
 </body>
 
 </html>
