@@ -827,6 +827,19 @@
 
         /* Mobile Adjustments */
         @media(max-width: 768px) {
+            nav {
+                padding: 14px 5%;
+            }
+
+            .logo {
+                font-size: 1.1rem;
+            }
+
+            .btn {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
             .hero {
                 padding: 0 6%;
             }
@@ -1144,11 +1157,14 @@
     <div class="section" id="about" style="padding-top: 80px; padding-bottom: 20px;">
         <div class="section-header fade-el" style="margin-bottom: 0;">
             <h2>About Jagdambaa Foam</h2>
-            <p style="margin: 0 auto; max-width: 800px; margin-bottom: 20px;">Welcome to Jagdambaa Mattress, your premier destination for
-                unparalleled comfort. We specialize in crafting luxury sofa fabrics, premium mattresses, and plush
-                pillows that transform your space into a sanctuary of relaxation. With a dedication to quality and
-                precision, our products are designed to deliver restorative sleep and elegant living. We are also your trusted source for premium sofa materials, including all types of foams, EPE, and high-quality sofa hardware for lasting durability.</p>
-            <p style="margin: 0 auto; max-width: 800px; color: var(--text-primary); font-weight: 500;">We are a trusted sofa fabric and foam supplier in Delhi, offering high-quality sofa materials, upholstery fabrics, foam sheets, and mattress foam. At Jagdambaa Foam, we provide durable and affordable solutions for sofa repair, furniture manufacturing, and home furnishing needs. Our wide range of products ensures comfort, quality, and long-lasting performance for every customer. Serving customers across Delhi NCR.</p>
+            <p style="margin: 0 auto; max-width: 800px; margin-bottom: 20px;">Welcome to Jagdambaa Mattress, your premier destination for unparalleled comfort. We specialize in crafting luxury sofa fabrics, premium mattresses, and plush pillows that transform your space into a sanctuary of relaxation.</p>
+            
+            <div id="about-more-content" style="display: none; opacity: 0; transition: opacity 0.3s ease;">
+                <p style="margin: 0 auto; max-width: 800px; margin-bottom: 20px;">With a dedication to quality and precision, our products are designed to deliver restorative sleep and elegant living. We are also your trusted source for premium sofa materials, including all types of foams, EPE, and high-quality sofa hardware for lasting durability.</p>
+                <p style="margin: 0 auto; max-width: 800px; color: var(--text-primary); font-weight: 500;">We are a trusted sofa fabric and foam supplier in Delhi, offering high-quality sofa materials, upholstery fabrics, foam sheets, and mattress foam. At Jagdambaa Foam, we provide durable and affordable solutions for sofa repair, furniture manufacturing, and home furnishing needs. Our wide range of products ensures comfort, quality, and long-lasting performance for every customer. Serving customers across Delhi NCR.</p>
+            </div>
+            
+            <button id="about-read-btn" onclick="const div = document.getElementById('about-more-content'); const btn = this; if (div.style.display === 'none') { div.style.display = 'block'; setTimeout(() => div.style.opacity = '1', 10); btn.innerHTML = 'See Less &uarr;'; } else { div.style.opacity = '0'; setTimeout(() => div.style.display = 'none', 300); btn.innerHTML = 'See More &darr;'; }" style="margin-top: 20px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); color: #EFF6FF; padding: 10px 24px; border-radius: 999px; cursor: pointer; font-size: 0.95rem; font-weight: 600; display: inline-flex; align-items: center; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 4px 15px rgba(0,0,0,0.2);" onmouseover="this.style.background='rgba(59, 130, 246, 0.2)'; this.style.transform='scale(1.03)'" onmouseout="this.style.background='rgba(59, 130, 246, 0.1)'; this.style.transform='scale(1)'">See More &darr;</button>
         </div>
     </div>
 
