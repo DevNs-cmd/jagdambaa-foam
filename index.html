@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jagdambaa Foam | The Pinnacle of Comfort</title>
+    <title>Sofa Fabric & Foam Supplier in Delhi | Jagdambaa Foam</title>
+    <meta name="description" content="Jagdambaa Foam is a leading supplier of sofa fabric, sofa material, foam sheets, and mattress foam in Delhi. Best quality upholstery materials at affordable prices.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -154,7 +155,7 @@
         .hero {
             position: relative;
             height: 100vh;
-            min-height: 700px;
+            min-height: 800px;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -163,7 +164,7 @@
             padding: 0 5%;
             overflow: hidden;
             transform: translateZ(0);
-            /* Hardware Acceleration */
+            background: #000;
         }
 
         .hero video {
@@ -175,6 +176,7 @@
             object-fit: cover;
             z-index: -2;
             will-change: transform;
+            opacity: 0.85;
         }
 
         .hero-overlay {
@@ -183,29 +185,146 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, rgba(0, 4, 17, 0.55) 0%, rgba(0, 4, 17, 0.95) 100%);
+            background: linear-gradient(to bottom, rgba(0, 4, 17, 0.3) 0%, rgba(0, 4, 17, 0.9) 100%),
+                        radial-gradient(circle at center, rgba(0, 4, 17, 0) 0%, rgba(0, 4, 17, 0.7) 100%);
             z-index: -1;
         }
 
+        .hero-content-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 22px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 999px;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: #F8FAFC;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+        }
+        
+        .hero-badge:hover {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+
+        .hero-badge span {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            background: #60A5FA;
+            border-radius: 50%;
+            box-shadow: 0 0 12px #60A5FA;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(96, 165, 250, 0.8); }
+            70% { box-shadow: 0 0 0 10px rgba(96, 165, 250, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(96, 165, 250, 0); }
+        }
+
         .hero h1 {
-            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.8));
+            filter: drop-shadow(0 8px 24px rgba(0, 0, 0, 0.6));
+            font-size: clamp(3rem, 7.5vw, 6.5rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.05;
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            animation: hero3d 1.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            opacity: 0;
+            transform-origin: bottom center;
+        }
+
+        @keyframes hero3d {
+            0% { opacity: 0; transform: perspective(1000px) translateY(60px) scale(0.9) rotateX(25deg); }
+            100% { opacity: 1; transform: perspective(1000px) translateY(0) scale(1) rotateX(0); }
         }
 
         .hero p {
-            color: #F8FAFC;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
-            margin-top: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 3rem;
-            margin-left: auto;
-            margin-right: auto;
+            color: #E2E8F0;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.8);
+            font-size: clamp(1.15rem, 2.5vw, 1.4rem);
+            margin-top: 0;
+            font-weight: 400;
+            margin-bottom: 3.5rem;
+            max-width: 750px;
+            line-height: 1.6;
+            letter-spacing: 0.01em;
         }
 
         .hero .cta-group {
             display: flex;
-            gap: 16px;
+            gap: 20px;
             justify-content: center;
             flex-wrap: wrap;
+        }
+
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.75rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            z-index: 2;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            opacity: 0.8;
+        }
+        
+        .scroll-indicator:hover {
+            color: #FFF;
+            opacity: 1;
+        }
+
+        .scroll-indicator .mouse {
+            width: 24px;
+            height: 38px;
+            border: 2px solid currentColor;
+            border-radius: 20px;
+            position: relative;
+        }
+
+        .scroll-indicator .wheel {
+            width: 4px;
+            height: 6px;
+            background: currentColor;
+            border-radius: 2px;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scrollWheel 2s infinite cubic-bezier(0.15, 0.41, 0.69, 0.94);
+        }
+
+        @keyframes scrollWheel {
+            0% { top: 8px; opacity: 1; transform: translateX(-50%) scaleY(1); }
+            50% { top: 16px; opacity: 1; transform: translateX(-50%) scaleY(1.2); }
+            100% { top: 24px; opacity: 0; transform: translateX(-50%) scaleY(0.8); }
         }
 
         /* Sections */
@@ -562,21 +681,67 @@
         /* Reveal Animations */
         .fade-el {
             opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: perspective(1000px) translateY(40px) scale(0.96) rotateX(-12deg);
+            transform-origin: bottom center;
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
             will-change: opacity, transform;
         }
 
         .fade-el.visible {
             opacity: 1;
-            transform: translateY(0);
+            transform: perspective(1000px) translateY(0) scale(1) rotateX(0);
         }
 
         /* Hero Btn Specifics */
-        .btn-primary-hero,
+        .btn-primary-hero {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            will-change: transform, box-shadow;
+            padding: 18px 42px;
+            font-size: 1.15rem;
+            background: linear-gradient(135deg, #FFFFFF 0%, #E2E8F0 100%);
+            color: #0F172A;
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            font-weight: 700;
+            letter-spacing: 0.02em;
+            border-radius: 999px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .btn-primary-hero:hover {
+            box-shadow: 0 15px 40px rgba(255, 255, 255, 0.3);
+            transform: translateY(-3px) scale(1.02);
+            background: #FFFFFF;
+        }
+
         .btn-secondary-hero {
-            padding: 16px 36px;
-            font-size: 1.1rem;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            will-change: transform, box-shadow;
+            padding: 18px 42px;
+            font-size: 1.15rem;
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            color: #FFF;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border-radius: 999px;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .btn-secondary-hero:hover {
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
         }
 
         /* Footer Grid */
@@ -872,7 +1037,7 @@
 
     <nav>
         <a href="#" class="logo">Jagdambaa Foam</a>
-        <a href="#enquiry" class="btn">Get Quote</a>
+        <a href="#enquiry" class="btn">Get Best Price</a>
     </nav>
 
     <!-- HERO: Utilizing UHD Video for highest quality impression -->
@@ -882,25 +1047,35 @@
         </video>
         <div class="hero-overlay"></div>
 
-        <div class="fade-el visible" style="z-index: 1; width: 100%;">
-            <h1 class="text-gradient">Luxury Sofa Fabric & <br> Mattress Store in Delhi.</h1>
-            <p>Premium textures, precision-crafted comfort, and unparalleled sleep quality.
-            </p>
+        <div class="hero-content-wrapper fade-el visible">
+            <div class="hero-badge">
+                <span></span> Premium Quality Guaranteed
+            </div>
+            <h1 class="text-gradient">Sofa Fabric & Foam Supplier in Delhi</h1>
+            <p>Experience premium textures, precision-crafted comfort, and unparalleled sleep quality designed for your ultimate relaxation.</p>
             <div class="cta-group">
-                <a href="#services" class="btn btn-primary-hero">Explore Collection</a>
-                <a href="#video-tour" class="btn-secondary btn-secondary-hero">Watch Showcase</a>
+                <a href="tel:+917042680172" class="btn-primary-hero">Call Now</a>
+                <a href="https://wa.me/917042680172" class="btn-secondary-hero">WhatsApp Us</a>
             </div>
         </div>
+
+        <a href="#about" class="scroll-indicator fade-el visible">
+            <div class="mouse">
+                <div class="wheel"></div>
+            </div>
+            Scroll
+        </a>
     </section>
 
     <!-- ABOUT SECTION -->
     <div class="section" id="about" style="padding-top: 80px; padding-bottom: 20px;">
         <div class="section-header fade-el" style="margin-bottom: 0;">
             <h2>About Jagdambaa Foam</h2>
-            <p style="margin: 0 auto; max-width: 800px;">Welcome to Jagdambaa Mattress, your premier destination for
+            <p style="margin: 0 auto; max-width: 800px; margin-bottom: 20px;">Welcome to Jagdambaa Mattress, your premier destination for
                 unparalleled comfort. We specialize in crafting luxury sofa fabrics, premium mattresses, and plush
                 pillows that transform your space into a sanctuary of relaxation. With a dedication to quality and
                 precision, our products are designed to deliver restorative sleep and elegant living. We are also your trusted source for premium sofa materials, including all types of foams, EPE, and high-quality sofa hardware for lasting durability.</p>
+            <p style="margin: 0 auto; max-width: 800px; color: var(--text-primary); font-weight: 500;">We are a trusted sofa fabric and foam supplier in Delhi, offering high-quality sofa materials, upholstery fabrics, foam sheets, and mattress foam. At Jagdambaa Foam, we provide durable and affordable solutions for sofa repair, furniture manufacturing, and home furnishing needs. Our wide range of products ensures comfort, quality, and long-lasting performance for every customer. Serving customers across Delhi NCR.</p>
         </div>
     </div>
 
@@ -1050,7 +1225,7 @@
             <!-- Sofa Product -->
             <div class="product-card fade-el">
                 <div class="product-image">
-                    <img src="images/sofa-collection.jpg" alt="Premium Sofas" loading="lazy"
+                    <img src="images/sofa-collection.jpg" alt="sofa fabric roll" loading="lazy"
                         onerror="this.src='https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800&auto=format&fit=crop'">
                 </div>
                 <div class="product-content">
@@ -1069,7 +1244,7 @@
             <!-- Mattress Product -->
             <div class="product-card fade-el">
                 <div class="product-image">
-                    <img src="images/mattress-collection.jpg" alt="Premium Mattresses" loading="lazy"
+                    <img src="images/mattress-collection.jpg" alt="foam mattress sheet" loading="lazy"
                         onerror="this.src='https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800&auto=format&fit=crop'">
                 </div>
                 <div class="product-content">
@@ -1088,7 +1263,7 @@
             <!-- Pillow Product -->
             <div class="product-card fade-el">
                 <div class="product-image">
-                    <img src="images/pillow-collection.jpg" alt="Premium Pillows" loading="lazy"
+                    <img src="images/pillow-collection.jpg" alt="upholstery material" loading="lazy"
                         onerror="this.src='https://images.unsplash.com/photo-1584100936595-c0654b55a2e2?q=80&w=800&auto=format&fit=crop'">
                 </div>
                 <div class="product-content">
@@ -1108,7 +1283,7 @@
             <div class="product-card fade-el">
                 <div class="product-image">
                     <!-- Premium Material Image -->
-                    <img src="https://images.unsplash.com/photo-1542451542907-6cf80ff362d6?q=80&w=800&auto=format&fit=crop" alt="Premium Sofa Materials" loading="lazy"
+                    <img src="https://images.unsplash.com/photo-1542451542907-6cf80ff362d6?q=80&w=800&auto=format&fit=crop" alt="sofa repair material" loading="lazy"
                         onerror="this.src='https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?q=80&w=800&auto=format&fit=crop'">
                 </div>
                 <div class="product-content">
@@ -1120,6 +1295,97 @@
                         <li>EPE Sheets</li>
                         <li>Premium Hardware</li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- DETAILED CATEGORIES (SEO SECTIONS) -->
+    <div class="section" id="categories-seo" style="padding-top: 40px; padding-bottom: 40px;">
+        <div class="section-header fade-el" style="margin-bottom: 3rem;">
+            <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem);">Premium Upholstery Materials in Delhi</h2>
+        </div>
+
+        <div class="bento-grid fade-el" style="margin-bottom: 40px; align-items: center;">
+            <div class="bento-item span-6" style="padding: 0; border: none; background: transparent; display: flex; align-items: stretch;">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800" alt="sofa fabric roll" loading="lazy" style="width: 100%; min-height: 350px; object-fit: cover; border-radius: 32px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+            </div>
+            <div class="bento-item span-6" style="justify-content: center; background: transparent; border: none; padding: 2rem;">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem;">Top Quality Sofa Fabric</h3>
+                <p style="margin-bottom: 1rem;">Are you looking for the best <strong>sofa fabric supplier in Delhi</strong>? Look no further. At Jagdambaa Foam, we offer an extensive collection of premium sofa fabrics to suit all residential and commercial needs. Whether you are aiming for a classic look or a modern aesthetic, our materials ensure resilience and style.</p>
+                <p>Our fabrics are carefully sourced to give your furniture a perfect finish. From rich velvet to durable cotton blends, we have it all. As a renowned <strong>upholstery material Delhi</strong> provider, we ensure that every fabric roll meets the highest standards of quality and fade resistance.</p>
+            </div>
+        </div>
+
+        <div class="bento-grid fade-el" style="margin-bottom: 40px; align-items: center;">
+            <div class="bento-item span-6" style="padding: 0; border: none; background: transparent; display: flex; align-items: stretch;">
+                 <img src="foam_sheets.png" alt="foam mattress sheet" loading="lazy" style="width: 100%; min-height: 350px; object-fit: cover; border-radius: 32px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+            </div>
+            <div class="bento-item span-6" style="justify-content: center; background: transparent; border: none; padding: 2rem;">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem;">Durable Foam Sheets</h3>
+                <p style="margin-bottom: 1rem;">Jagdambaa Foam is a trusted <strong>foam sheet supplier</strong> catering to varied industrial and domestic requirements. High-density foam sheets are crucial for ensuring the longevity of your seating. Our foam sheets deliver exceptional support and hold their shape for years, resisting sagging completely.</p>
+                <p>Sourced and processed with the greatest precision, our foam sheets are perfect for new furniture and renovation projects alike. Whether you need them for seating, soundproofing, or packaging, we offer versatile foam solutions that match your exact specifications.</p>
+            </div>
+        </div>
+
+        <div class="bento-grid fade-el" style="margin-bottom: 40px; align-items: center;">
+            <div class="bento-item span-6" style="padding: 0; border: none; background: transparent; display: flex; align-items: stretch;">
+                <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800" alt="foam mattress sheet" loading="lazy" style="width: 100%; min-height: 350px; object-fit: cover; border-radius: 32px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+            </div>
+            <div class="bento-item span-6" style="justify-content: center; background: transparent; border: none; padding: 2rem;">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem;">Comfort Mattress Foam</h3>
+                <p style="margin-bottom: 1rem;">Experience the ultimate sleep with our top-tier mattress foam. As a leading <strong>mattress foam dealer</strong>, we understand that a good night's sleep is priceless. Our mattress foams provide excellent orthopedic support, contouring seamlessly to your body shape for maximum relief.</p>
+                <p>By blending state-of-the-art manufacturing with breathable materials, we ensure temperature regulation and superior comfort. Upgrade your bedding experience with our mattress foams, trusted by countless households and hospitality businesses across Delhi NCR.</p>
+            </div>
+        </div>
+
+        <div class="bento-grid fade-el" style="margin-bottom: 40px; align-items: center;">
+            <div class="bento-item span-6" style="padding: 0; border: none; background: transparent; display: flex; align-items: stretch;">
+                 <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?q=80&w=800" alt="upholstery material" loading="lazy" style="width: 100%; min-height: 350px; object-fit: cover; border-radius: 32px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+            </div>
+            <div class="bento-item span-6" style="justify-content: center; background: transparent; border: none; padding: 2rem;">
+                <h3 style="font-size: 2rem; margin-bottom: 1rem;">Sofa Repair Material</h3>
+                <p style="margin-bottom: 1rem;">Transform your worn-out furniture with our high-grade <strong>sofa repair material</strong>. If you are operating a <strong>sofa material shop</strong> near me or taking up a DIY home improvement project, we have everything you need. We supply EPE sheets, durable zippers, staple pins, adhesives, and base clothes.</p>
+                <p>Don't replace your beloved sofa when you can restore it to its former glory. Trust Jagdambaa Foam to provide the foundational materials that carpenters and upholsterers rely on for sturdy, beautiful sofa renovations.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- KNOWLEDGE BASE & BLOG -->
+    <div class="section" id="blog" style="padding-top: 40px; padding-bottom: 80px;">
+        <div class="section-header fade-el" style="margin-bottom: 3rem;">
+            <h2 style="font-size: clamp(1.8rem, 4vw, 2.5rem);">Buyer's Guides & Tips</h2>
+            <p>Enhance your knowledge with our expert articles and guides.</p>
+        </div>
+        <div class="products-grid">
+            <div class="product-card fade-el">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800" alt="Best sofa fabric for homes" loading="lazy">
+                </div>
+                <div class="product-content">
+                    <h3 style="font-size: 1.25rem;">Best Sofa Fabric for Homes</h3>
+                    <p style="margin-bottom: 1rem;">Discover which materials offer the perfect balance of durability, aesthetics, and ease of maintenance for your living space.</p>
+                    <a href="#" style="color: #60A5FA; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Read More &rarr;</a>
+                </div>
+            </div>
+            <div class="product-card fade-el">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=800" alt="How to choose foam mattress" loading="lazy">
+                </div>
+                <div class="product-content">
+                    <h3 style="font-size: 1.25rem;">How to Choose a Foam Mattress</h3>
+                    <p style="margin-bottom: 1rem;">Learn about different foam densities, support structures, and cooling technologies to find your ideal sleep solution.</p>
+                    <a href="#" style="color: #60A5FA; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Read More &rarr;</a>
+                </div>
+            </div>
+            <div class="product-card fade-el">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?q=80&w=800" alt="Sofa repair guide" loading="lazy">
+                </div>
+                <div class="product-content">
+                    <h3 style="font-size: 1.25rem;">Ultimate Sofa Repair Guide</h3>
+                    <p style="margin-bottom: 1rem;">A step-by-step tutorial on revitalizing old furniture using our premium foam sheets, EPE, and high-quality hardware.</p>
+                    <a href="#" style="color: #60A5FA; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Read More &rarr;</a>
                 </div>
             </div>
         </div>
@@ -1158,12 +1424,19 @@
     <div class="section" style="padding-top: 20px; padding-bottom: 80px;">
         <div class="footer-grid" style="display: grid; grid-template-columns: repeat(2, 1fr); max-width: 600px; margin: 0 auto; gap: 40px; text-align: center;">
             <div class="fade-el">
-                <h3>Store</h3>
-                <p style="margin: 0 auto; font-size: 1rem;">A-24, 60 Feet Road,<br>Pul Pehladpur,<br>Delhi 110044</p>
+                <h3>Store Location</h3>
+                <p style="margin: 0 auto; font-size: 1rem;"><strong>Jagdambaa Foam</strong><br>A-24, 60 Feet Road,<br>Pul Pehladpur, Delhi 110044<br><br><span style="color: #94A3B8; font-size: 0.9rem;">Serving customers across Delhi NCR & Near me</span></p>
             </div>
-            <div class="fade-el">
-                <h3>Connect</h3>
-                <p style="margin: 0 auto; font-size: 1rem;"><span style="color: #60A5FA; font-weight: 600; letter-spacing: 0.5px;">+91 8882256437</span><br><span style="color: #60A5FA; font-weight: 600; letter-spacing: 0.5px;">+91 7042680172</span></p>
+            <div class="fade-el" style="display: flex; flex-direction: column; gap: 14px; align-items: center;">
+                <h3 style="margin-bottom: 6px;">Connect With Us</h3>
+                <a href="tel:+918882256437" style="display: flex; align-items: center; justify-content: center; gap: 12px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(96, 165, 250, 0.3); padding: 12px 28px; border-radius: 999px; text-decoration: none; color: #FFF; font-weight: 600; font-size: 1.05rem; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);" onmouseover="this.style.transform='translateY(-3px) scale(1.02)'; this.style.background='rgba(59, 130, 246, 0.2)'; this.style.boxShadow='0 10px 25px rgba(37, 99, 235, 0.3)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.background='rgba(59, 130, 246, 0.1)'; this.style.boxShadow='0 4px 20px rgba(37, 99, 235, 0.15)';">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    +91 8882256437
+                </a>
+                <a href="tel:+917042680172" style="display: flex; align-items: center; justify-content: center; gap: 12px; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(96, 165, 250, 0.3); padding: 12px 28px; border-radius: 999px; text-decoration: none; color: #FFF; font-weight: 600; font-size: 1.05rem; transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1); box-shadow: 0 4px 20px rgba(37, 99, 235, 0.15);" onmouseover="this.style.transform='translateY(-3px) scale(1.02)'; this.style.background='rgba(59, 130, 246, 0.2)'; this.style.boxShadow='0 10px 25px rgba(37, 99, 235, 0.3)';" onmouseout="this.style.transform='translateY(0) scale(1)'; this.style.background='rgba(59, 130, 246, 0.1)'; this.style.boxShadow='0 4px 20px rgba(37, 99, 235, 0.15)';">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    +91 7042680172
+                </a>
             </div>
         </div>
         
@@ -1202,6 +1475,53 @@
         document.querySelectorAll('.fade-el:not(.visible)').forEach((el) => {
             observer.observe(el);
         });
+
+        // Interactive 3D Tilt & Glow System
+        const cards = document.querySelectorAll('.bento-item, .product-card');
+        const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        
+        if (!isTouchDevice) {
+            cards.forEach(card => {
+                const isTransparent = card.style.background === 'transparent' || card.style.border === 'none';
+                
+                card.addEventListener('mousemove', e => {
+                    const rect = card.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    const rotateX = ((y - centerY) / centerY) * -5; 
+                    const rotateY = ((x - centerX) / centerX) * 5;
+                    
+                    card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                    
+                    if (card.classList.contains('bento-item') && !isTransparent) {
+                       const glowX = (x / rect.width) * 100;
+                       const glowY = (y / rect.height) * 100;
+                       card.style.background = `radial-gradient(circle at ${glowX}% ${glowY}%, rgba(37, 99, 235, 0.12) 0%, var(--card-bg) 70%)`;
+                       card.style.borderColor = 'rgba(96, 165, 250, 0.4)';
+                    }
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)`;
+                    if (card.classList.contains('bento-item') && !isTransparent) {
+                        card.style.background = '';
+                        card.style.borderColor = '';
+                    }
+                });
+                
+                card.addEventListener('mouseenter', () => {
+                    card.style.transition = `transform 0.1s ease-out, background 0.2s ease, border-color 0.2s ease`;
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transition = `transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), background 0.6s ease, border-color 0.6s ease`;
+                });
+            });
+        }
     </script>
 
 </body>
