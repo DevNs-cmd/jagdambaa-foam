@@ -412,12 +412,29 @@
         }
 
         @media(max-width: 768px) {
-
             .span-4,
             .span-6,
             .span-8,
             .span-12 {
                 grid-column: span 12;
+            }
+        }
+
+        .seo-bento-img {
+            width: 100%;
+            height: 100%;
+            min-height: 200px;
+            max-height: 400px;
+            object-fit: cover;
+            border-radius: 32px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            aspect-ratio: 16/10;
+        }
+
+        @media(max-width: 768px) {
+            .seo-bento-img {
+                aspect-ratio: 4/3;
+                max-height: 250px;
             }
         }
 
@@ -1397,7 +1414,7 @@
 
         <div class="bento-grid fade-el" style="margin-bottom: 40px; align-items: center;">
             <div class="bento-item span-6" style="padding: 0; border: none; background: transparent; display: flex; align-items: stretch;">
-                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800" alt="sofa fabric roll" loading="lazy" style="width: 100%; min-height: 350px; object-fit: cover; border-radius: 32px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=800" alt="sofa fabric roll" loading="lazy" class="seo-bento-img">
             </div>
             <div class="bento-item span-6" style="justify-content: center; background: transparent; border: none; padding: 2rem;">
                 <h3 style="font-size: 2rem; margin-bottom: 1rem;">Top Quality Sofa Fabric</h3>
@@ -1408,7 +1425,7 @@
 
         <div class="bento-grid fade-el" style="margin-bottom: 40px; align-items: center;">
             <div class="bento-item span-6" style="padding: 0; border: none; background: transparent; display: flex; align-items: stretch;">
-                 <img src="foam_sheets.png" alt="foam mattress sheet" loading="lazy" style="width: 100%; min-height: 350px; object-fit: cover; border-radius: 32px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                 <img src="foam_sheets.png" alt="foam mattress sheet" loading="lazy" class="seo-bento-img">
             </div>
             <div class="bento-item span-6" style="justify-content: center; background: transparent; border: none; padding: 2rem;">
                 <h3 style="font-size: 2rem; margin-bottom: 1rem;">Durable Foam Sheets</h3>
@@ -1419,7 +1436,7 @@
 
         <div class="bento-grid fade-el" style="margin-bottom: 40px; align-items: center;">
             <div class="bento-item span-6" style="padding: 0; border: none; background: transparent; display: flex; align-items: stretch;">
-                <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800" alt="foam mattress sheet" loading="lazy" style="width: 100%; min-height: 350px; object-fit: cover; border-radius: 32px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?q=80&w=800" alt="foam mattress sheet" loading="lazy" class="seo-bento-img">
             </div>
             <div class="bento-item span-6" style="justify-content: center; background: transparent; border: none; padding: 2rem;">
                 <h3 style="font-size: 2rem; margin-bottom: 1rem;">Comfort Mattress Foam</h3>
@@ -1430,7 +1447,7 @@
 
         <div class="bento-grid fade-el" style="margin-bottom: 40px; align-items: center;">
             <div class="bento-item span-6" style="padding: 0; border: none; background: transparent; display: flex; align-items: stretch;">
-                 <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?q=80&w=800" alt="upholstery material" loading="lazy" style="width: 100%; min-height: 350px; object-fit: cover; border-radius: 32px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+                 <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?q=80&w=800" alt="upholstery material" loading="lazy" class="seo-bento-img">
             </div>
             <div class="bento-item span-6" style="justify-content: center; background: transparent; border: none; padding: 2rem;">
                 <h3 style="font-size: 2rem; margin-bottom: 1rem;">Sofa Repair Material</h3>
