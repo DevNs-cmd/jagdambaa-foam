@@ -629,52 +629,48 @@
         }
 
         .brand-item {
-            width: 280px;
-            height: 110px;
+            width: 200px;
+            height: 100px;
             flex-shrink: 0;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: rgba(255, 255, 255, 0.04);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 24px;
-            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
             cursor: pointer;
             text-align: center;
+            position: relative;
         }
 
         .brand-item img {
-            max-width: 85%;
-            max-height: 70%;
+            max-width: 100%;
+            max-height: 100%;
             object-fit: contain;
-            filter: brightness(0) invert(1) opacity(0.8);
-            transition: all 0.4s ease;
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.15));
+            transition: all 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
         }
 
         .brand-item .fallback-text {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.4rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 1.3rem;
             color: #FFFFFF;
-            font-weight: 600;
-            letter-spacing: 1px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
             opacity: 0.9;
+            text-transform: uppercase;
         }
 
         .brand-item:hover {
-            background: rgba(255, 255, 255, 0.08);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 
+                0 20px 40px rgba(0, 0, 0, 0.6),
+                0 0 20px rgba(96, 165, 250, 0.2);
         }
 
         .brand-item:hover img {
-            opacity: 1;
-            transform: scale(1.05);
-            filter: brightness(0) invert(1) drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 15px rgba(255,255,255,0.3));
         }
 
         @keyframes scroll {
@@ -683,7 +679,7 @@
             }
 
             100% {
-                transform: translateX(calc(-300px * 4 - 40px * 4));
+                transform: translateX(calc(-200px * 4 - 40px * 4));
             }
         }
 
@@ -1019,8 +1015,8 @@
             }
 
             .brand-item {
-                width: 220px;
-                height: 90px;
+                width: 160px;
+                height: 80px;
                 font-size: 1.2rem;
             }
 
@@ -1030,7 +1026,7 @@
                 }
 
                 100% {
-                    transform: translateX(calc(-220px * 4 - 40px * 4));
+                    transform: translateX(calc(-160px * 4 - 40px * 4));
                 }
             }
 
@@ -1289,8 +1285,8 @@
             }
 
             .brand-item {
-                width: 180px;
-                height: 80px;
+                width: 140px;
+                height: 70px;
                 font-size: 1rem;
             }
 
@@ -1300,7 +1296,7 @@
                 }
 
                 100% {
-                    transform: translateX(calc(-180px * 4 - 40px * 4));
+                    transform: translateX(calc(-140px * 4 - 40px * 4));
                 }
             }
 
@@ -1574,37 +1570,37 @@
             <div class="slide-track">
                 <!-- Data from reliable Indian industrial sources and official stores -->
                 <div class="brand-item">
-                    <img src="https://5.imimg.com/data5/SE/RY/MY-40620353/sleepwell-logo-500x500.png" alt="Sleepwell" 
+                    <img src="sleepwell.png" alt="Sleepwell" 
                          onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'fallback-text\'>Sleepwell</span>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://images.jdmagicbox.com/comp/greater_noida/l8/011pxx11.xx11.111005115206.l6l8/catalogue/allied-foams-pvt-ltd-kasna-greater-noida-mattress-dealers-8pzkrshub9.jpg" alt="Allied Foams"
+                    <img src="allied foam.jpg" alt="Allied Foams"
                          onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'fallback-text\'>Allied Foams</span>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://signatureblankets.in/cdn/shop/files/Logo_White_600x.png?v=1614304856" alt="Signature"
+                    <img src="signature.jpg" alt="Signature"
                          onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'fallback-text\'>Signature</span>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://corfom.com/cdn/shop/files/Corfom_Logo_1.png" alt="Corfom"
+                    <img src="corfom.png" alt="Corfom"
                          onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'fallback-text\'>Corfom</span>';">
                 </div>
 
                 <!-- Duplicate for infinite loop -->
                 <div class="brand-item">
-                    <img src="https://5.imimg.com/data5/SE/RY/MY-40620353/sleepwell-logo-500x500.png" alt="Sleepwell"
+                    <img src="sleepwell.png" alt="Sleepwell"
                          onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'fallback-text\'>Sleepwell</span>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://images.jdmagicbox.com/comp/greater_noida/l8/011pxx11.xx11.111005115206.l6l8/catalogue/allied-foams-pvt-ltd-kasna-greater-noida-mattress-dealers-8pzkrshub9.jpg" alt="Allied Foams"
+                    <img src="allied foam.jpg" alt="Allied Foams"
                          onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'fallback-text\'>Allied Foams</span>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://signatureblankets.in/cdn/shop/files/Logo_White_600x.png?v=1614304856" alt="Signature"
+                    <img src="signature.jpg" alt="Signature"
                          onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'fallback-text\'>Signature</span>';">
                 </div>
                 <div class="brand-item">
-                    <img src="https://corfom.com/cdn/shop/files/Corfom_Logo_1.png" alt="Corfom"
+                    <img src="corfom.png" alt="Corfom"
                          onerror="this.style.display='none'; this.parentElement.innerHTML='<span class=\'fallback-text\'>Corfom</span>';">
                 </div>
             </div>
