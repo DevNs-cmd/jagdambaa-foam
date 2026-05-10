@@ -1,25 +1,7 @@
 {
   "version": 2,
-  "cleanUrls": true,
-  "rewrites": [
-    {
-      "source": "/sitemap",
-      "destination": "/sitemap.xml"
-    },
-    {
-      "source": "/robots",
-      "destination": "/robots.txt"
-    }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
+  "cleanUrls": false,
+  "trailingSlash": false,
   "headers": [
     {
       "source": "/(.*\\.(jpg|jpeg|png|gif|ico|svg|mp4|webp|woff2))",
@@ -39,11 +21,37 @@
         }
       ]
     }
-
+  ],
+  "redirects": [
     {
-  "outputDirectory": ".",
-  "cleanUrls": false,
-  "trailingSlash": false
-}
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "foammattressdelhi.com"
+        }
+      ],
+      "destination": "https://www.foammattressdelhi.com/$1",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/sitemap",
+      "destination": "/sitemap.xml"
+    },
+    {
+      "source": "/robots",
+      "destination": "/robots.txt"
+    }
+  ],
+  "routes": [
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
   ]
 }
